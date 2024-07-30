@@ -1,13 +1,9 @@
 import React from "react";
 import Card from "./Card";
-
-interface ItemProps {
-  comments: string;
-  mensage: string;
-}
+import { NotificationProps } from "@/services/api";
 
 interface UpdateProps {
-  data: ItemProps[];
+  data: NotificationProps;
 }
 
 const Update: React.FC<UpdateProps> = ({ data }) => {

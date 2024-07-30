@@ -34,6 +34,7 @@ export interface Credits {
 }
 
 export interface NotificationProps {
+  map(arg0: (item: any) => import("react").JSX.Element): import("react").ReactNode;
   length: number;
   comments: number;
   read?: boolean;
@@ -55,7 +56,9 @@ const getHomeData = async (): Promise<HomeDataProps | null> => {
 
 const getNotificationData = async (): Promise<NotificationProps | null> => {
   try {
-    const { data } = await axios.get(`${baseURL}notifications`);
+    const { data } = await axios.get<NotificationProps>(
+      `${baseURL}notifications`
+    );
     return data;
   } catch (error) {
     console.error(error);

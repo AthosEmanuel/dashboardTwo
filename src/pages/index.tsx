@@ -22,7 +22,7 @@ export default function Home() {
       if (responseHome) {
         setDataHome(responseHome);
       }
-      if (responseNotification) {
+      if (responseNotification && typeof responseNotification === "object") {
         setDataNotification(responseNotification);
       }
     };
