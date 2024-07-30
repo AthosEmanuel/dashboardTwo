@@ -61,7 +61,7 @@ const Update: React.FC<UpdateProps> = ({ data }) => {
         Hoje
       </div>
       {data.map((item: any) => (
-        <Card title={item.comments} subTitle={item.mensage} />
+        <Card title={item.comments} subTitle={item.mensage} key={item.id} />
       ))}
     </div>
   );
